@@ -12,7 +12,6 @@
             >Show Details
           </h1>
         </div>
-        <!-- //house-fill -->
         <hr />
         <b-img
           center
@@ -22,6 +21,13 @@
           class="image"
         ></b-img>
         <div class="content">
+          <b-embed
+            v-if="serie.next_trailer != null"
+            type="iframe"
+            aspect="16by9"
+            :src="'https://www.youtube.com/embed/' + serie.next_trailer"
+            class="youtube-embed"
+          ></b-embed>
           <h1>{{ serie.title }}</h1>
           <h4>
             <b-badge v-for="item in serie.genres" :key="item">{{
@@ -118,4 +124,9 @@ hr {
 .table {
   color: white;
 }
+
+/*.youtube-embed {
+  width: auto;
+  height: 30vh;
+}*/
 </style>
